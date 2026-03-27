@@ -1,6 +1,6 @@
 ---
 title: "Claude Code Remote Control 설치 가이드"
-date: 2026-03-27
+date: 2026-03-27T15:56:00+09:00
 draft: false
 tags: ["Claude Code", "Remote Control", "설치 가이드", "AI 에이전트", "원격 제어"]
 description: "Claude Code Remote Control을 설치하고 연결하는 기본 절차를 정리한 가이드다."

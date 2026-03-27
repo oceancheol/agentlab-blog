@@ -1,9 +1,13 @@
 ---
-title: "AgentLab 블로그를 시작합니다"
+title: "블로그 소개"
 date: 2026-03-27
 draft: false
-weight: -1
-tags: ["소개", "OpenClaw", "AI 에이전트"]
+weight: 1
+slug: about
+menu:
+  main:
+    name: "소개"
+    weight: 4
 description: "AI 소식, 생산성 도구, 에이전트 운영 노트를 기록하는 공간입니다."
 ---
 

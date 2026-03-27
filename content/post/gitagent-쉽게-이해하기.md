@@ -1,6 +1,6 @@
 ---
 title: "GitAgent 쉽게 이해하기: 초보자도 바로 감 잡는 정리"
-date: 2026-03-27
+date: 2026-03-27T16:13:00+09:00
 draft: false
 tags: ["GitAgent", "AI 에이전트", "개발도구", "초보자", "설명"]
 description: "GitAgent가 무엇인지, 왜 필요한지, 초보자 기준으로 쉽게 풀어 정리한 글이다."

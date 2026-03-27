@@ -1,6 +1,6 @@
 ---
 title: "gstack 사용 가이드: Claude Code를 가상 엔지니어링 팀으로 쓰는 법"
-date: 2026-03-27
+date: 2026-03-27T15:22:00+09:00
 draft: false
 tags: ["gstack", "Claude Code", "AI 에이전트", "개발도구", "워크플로우"]
 description: "gstack은 Claude Code를 기획, 설계, 리뷰, 테스트, 배포까지 이어지는 가상 엔지니어링 팀으로 바꿔주는 오픈소스 커맨드 모음이다."
