@@ -1,41 +1,63 @@
 baseURL: "https://oceancheol.github.io/agentlab-blog/"
 languageCode: "ko-kr"
 title: "AgentLab"
-theme: "PaperMod"
+theme: "stack"
 
 pagination:
   pagerSize: 10
 
+defaultContentLanguage: ko
+
 params:
-  homeInfoParams:
-    Title: "AgentLab 🤖"
-    Content: "AI 소식, 생산성 도구, OpenClaw 에이전트 운영 노트"
+  mainSections:
+    - post
+  featuredImageField: image
 
-  socialIcons:
-    - name: github
-      url: "https://github.com/oceancheol"
+  footer:
+    since: 2026
 
-  ShowReadingTime: true
-  ShowShareButtons: false
-  ShowPostNavLinks: true
-  ShowBreadCrumbs: true
-  ShowCodeCopyButtons: true
-  ShowToc: true
+  dateFormat:
+    published: "2006-01-02"
+    lastUpdated: "2006-01-02"
+
+  sidebar:
+    compact: false
+    emoji: "🤖"
+    subtitle: "AI 소식, 생산성 도구, 에이전트 운영 노트"
+    avatar:
+      enabled: false
+
+  article:
+    toc: true
+    readingTime: true
+
+  colorScheme:
+    toggle: true
+    default: auto
+
+  widgets:
+    homepage:
+      - type: search
+      - type: tag-cloud
+        params:
+          limit: 20
+    page:
+      - type: toc
 
 menu:
   main:
-    - name: "글 목록"
-      url: "/posts/"
+    - name: "홈"
+      url: "/"
       weight: 1
+    - name: "글 목록"
+      url: "/post/"
+      weight: 2
     - name: "태그"
       url: "/tags/"
-      weight: 2
-    - name: "검색"
-      url: "/search/"
       weight: 3
 
-outputs:
-  home:
-    - HTML
-    - RSS
-    - JSON
+  social:
+    - name: "GitHub"
+      identifier: "github"
+      url: "https://github.com/oceancheol"
+      weight: 1
