@@ -2,6 +2,7 @@
 title: "Claude Code on the Web 정리: 브라우저에서 코딩 에이전트 돌리기"
 date: 2026-03-27
 draft: false
+image: "images/posts/claude-code-on-the-web.jpg"
 tags: ["Claude Code", "Web", "Auto-fix", "GitHub", "클라우드", "개발도구"]
 description: "Claude Code on the Web이 무엇인지, PR Auto-fix는 어떻게 쓰는지 초보자도 이해하기 쉽게 정리한 글이다."
 ---
