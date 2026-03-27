@@ -23,8 +23,11 @@
     {{ $local := true }}
 
     {{ if not (in (slice "https" "http") $url.Scheme) }}
-        {{/* Local image */}}
+        {{/* Local image — check page resources first, then global assets */}}
         {{ $resource = .Resources.Get (printf "%s" (.Image | safeURL)) }}
+        {{ if not $resource }}
+            {{ $resource = resources.Get (printf "%s" (.Image | safeURL)) }}
+        {{ end }}
     {{ else }}
         {{/* Remote image */}}
         {{ with try (resources.GetRemote $url (dict "timeout" .Context.Site.Params.imageProcessing.external.timeout)) }}
