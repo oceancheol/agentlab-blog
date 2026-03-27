@@ -2,7 +2,7 @@
 title: "Obsidian 유저라면 꼭 볼 obsidian-skills 실사용 정리"
 date: 2026-03-27
 draft: false
-image: "/media/obsidian-skills-cover.png"
+image: "/media/obsidian-skills-cover.jpg"
 tags: ["Obsidian", "Obsidian Skills", "CLI", "지식관리", "생산성"]
 description: "Obsidian을 AI 노트 작성, 초안 보관, 지식 아카이브 운영까지 연결해주는 obsidian-skills를 실사용 관점에서 정리한 글이다."
 ---
