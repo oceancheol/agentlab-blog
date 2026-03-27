@@ -10,7 +10,7 @@ defaultContentLanguage: ko
 
 params:
   mainSections:
-    - post
+    - posts
   featuredImageField: image
 
   footer:
