@@ -4,6 +4,7 @@ date: 2026-03-27T16:13:00+09:00
 draft: false
 tags: ["GitAgent", "AI 에이전트", "개발도구", "초보자", "설명"]
 description: "GitAgent가 무엇인지, 왜 필요한지, 초보자 기준으로 쉽게 풀어 정리한 글이다."
+image: images/posts/gitagent.jpg
 ---
 
 `GitAgent`는 한마디로 말하면 **깃 저장소 자체를 AI 에이전트의 설명서이자 설정 파일로 쓰는 방식**이야.

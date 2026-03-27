@@ -4,6 +4,7 @@ date: 2026-03-27T15:22:00+09:00
 draft: false
 tags: ["gstack", "Claude Code", "AI 에이전트", "개발도구", "워크플로우"]
 description: "gstack은 Claude Code를 기획, 설계, 리뷰, 테스트, 배포까지 이어지는 가상 엔지니어링 팀으로 바꿔주는 오픈소스 커맨드 모음이다."
+image: images/posts/gstack.jpg
 ---
 
 `gstack`은 Claude Code를 여러 역할로 나눠 쓰게 해주는 오픈소스 슬래시 커맨드 모음이야. 단순히 코드를 대신 써주는 도구가 아니라, 기획부터 배포까지 이어지는 개발 흐름을 한 번에 정리해주는 게 핵심이야.

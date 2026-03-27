@@ -4,6 +4,7 @@ date: 2026-03-27
 draft: false
 tags: ["Codex", "Plugins", "AI 에이전트", "개발도구", "초보자"]
 description: "OpenAI Codex Plugins가 무엇인지, 왜 필요한지, 초보자도 이해하기 쉽게 정리한 글이다."
+image: images/posts/codex-plugins.jpg
 ---
 
 `Codex Plugins`는 한마디로 말하면 **자주 쓰는 워크플로우를 묶어서 재사용 가능한 플러그인으로 만드는 기능**이야.

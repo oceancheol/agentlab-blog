@@ -4,6 +4,7 @@ date: 2026-03-27
 draft: false
 tags: ["Anthropic", "Computer Use", "Claude", "AI 에이전트", "자동화"]
 description: "Anthropic Computer Use가 무엇인지, 어떤 기능이 있는지, 왜 중요한지 초보자도 이해하기 쉽게 정리한 글이다."
+image: images/posts/anthropic-computer-use.jpg
 ---
 
 `Anthropic Computer Use`는 AI가 사람처럼 화면을 보고 마우스와 키보드를 직접 다루는 기능이야.

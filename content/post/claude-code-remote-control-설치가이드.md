@@ -4,6 +4,7 @@ date: 2026-03-27T15:56:00+09:00
 draft: false
 tags: ["Claude Code", "Remote Control", "설치 가이드", "AI 에이전트", "원격 제어"]
 description: "Claude Code Remote Control을 설치하고 연결하는 기본 절차를 정리한 가이드다."
+image: images/posts/claude-code-remote-control.jpg
 ---
 
 Claude Code Remote Control은 로컬에서 실행 중인 Claude 세션을 원격에서도 이어서 쓸 수 있게 해주는 기능이야. 터미널을 켜 둔 상태에서 모바일이나 웹으로 연결해 작업을 확인하고 이어서 대화할 수 있어서, 작업 흐름을 끊지 않으면서도 접근성을 높여줘.
