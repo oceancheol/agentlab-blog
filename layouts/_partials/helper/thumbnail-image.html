@@ -1,0 +1,6 @@
+{{- $attributes := .Attributes | default dict -}}
+<img {{- range $k, $v := $attributes -}}
+    {{- if $v -}}
+        {{- printf " %s=%q" (lower $k) (printf "%v" $v) | safeHTMLAttr -}}
+    {{- end -}}
+{{- end -}}>
