@@ -30,6 +30,12 @@ params:
     toc: true
     readingTime: true
 
+  imageProcessing:
+    content:
+      enabled: false
+    thumbnail:
+      enabled: false
+
   colorScheme:
     toggle: true
     default: auto
