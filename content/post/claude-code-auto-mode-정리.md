@@ -2,7 +2,7 @@
 title: "Claude Code Auto Mode 정리: 권한 승인을 덜 묻는 새로운 방식"
 date: 2026-03-27
 draft: false
-featuredImage: "/media/claude-code-auto-mode-cover.jpg"
+image: "images/posts/claude-code-auto-mode.jpg"
 tags: ["Claude Code", "Auto Mode", "권한", "자동화", "개발도구"]
 description: "Claude Code Auto Mode가 무엇인지, 기존 권한 모드와 어떻게 다른지 초보자도 이해하기 쉽게 정리한 글이다."
 ---
