@@ -24,8 +24,7 @@ params:
     compact: false
     emoji: "🤖"
     subtitle: "AI 소식, 생산성 도구, 에이전트 운영 노트"
-    avatar:
-      enabled: false
+    avatar: ""
 
   article:
     toc: true
