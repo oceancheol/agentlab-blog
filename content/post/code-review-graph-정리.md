@@ -28,49 +28,34 @@ Claude Code 같은 에이전트는 보통 작업 때 코드를 넓게 읽는 경
 AI에게 “지금 바뀐 코드가 어떤 파일에 영향을 미치는지”만 정확히 알려주면,
 AI는 더 많은 부분을 덜 읽고도 더 정확하게 리뷰할 수 있어.
 
-<div style=”text-align:center; margin: 2rem 0;”>
-<svg width=”480” height=”210” viewBox=”0 0 480 210” xmlns=”http://www.w3.org/2000/svg” style=”max-width:100%;”>
-  <style>
-    @keyframes crg-fade { from { opacity:0; } to { opacity:1; } }
-    @keyframes crg-pulse { 0%,100% { r:26; } 50% { r:30; } }
-    .crg-n  { fill:#1e293b; stroke:#38bdf8; stroke-width:1.5; opacity:0; animation:crg-fade .3s forwards; }
-    .crg-nc { fill:#0f172a; stroke:#f97316; stroke-width:2.5; opacity:0; animation:crg-fade .3s .3s forwards; }
-    .crg-nc-pulse { animation:crg-fade .3s .3s forwards, crg-pulse 1s 1.8s 2; }
-    .crg-nl  { font:11px monospace; fill:#94a3b8; text-anchor:middle; dominant-baseline:middle; opacity:0; animation:crg-fade .3s forwards; }
-    .crg-nlc { font:11px monospace; fill:#f97316; text-anchor:middle; dominant-baseline:middle; font-weight:bold; opacity:0; animation:crg-fade .3s .3s forwards; }
-    .crg-e  { stroke:#334155; stroke-width:1.2; opacity:0; animation:crg-fade .3s forwards; }
-    .crg-eb { stroke:#f97316; stroke-width:2; stroke-dasharray:5,3; opacity:0; animation:crg-fade .4s 2s forwards; }
-    .crg-box { fill:rgba(249,115,22,0.08); stroke:#f97316; stroke-width:1; stroke-dasharray:4,2; opacity:0; animation:crg-fade .4s 2.2s forwards; }
-    .crg-bt { font:10px sans-serif; fill:#f97316; text-anchor:middle; opacity:0; animation:crg-fade .4s 2.2s forwards; }
-    .d1 { animation-delay:.1s; } .d2 { animation-delay:.2s; } .d3 { animation-delay:.4s; }
-    .d4 { animation-delay:.5s; } .d5 { animation-delay:.7s; } .d6 { animation-delay:.9s; }
-    .d7 { animation-delay:1.1s; } .d8 { animation-delay:1.3s; }
-  </style>
+<div style=”text-align:center; margin: 2rem 0; background:#0f172a; border-radius:12px; padding:1.5rem;”>
+<svg width=”460” height=”190” viewBox=”0 0 460 190” xmlns=”http://www.w3.org/2000/svg” style=”max-width:100%;”>
   <!-- edges -->
-  <line class=”crg-e d5” x1=”120” y1=”60” x2=”200” y2=”100”/>
-  <line class=”crg-e d5” x1=”120” y1=”150” x2=”200” y2=”110”/>
-  <line class=”crg-e d6” x1=”200” y1=”100” x2=”290” y2=”60”/>
-  <line class=”crg-e d7” x1=”200” y1=”100” x2=”290” y2=”150”/>
-  <line class=”crg-e d8” x1=”290” y1=”60” x2=”380” y2=”100”/>
-  <!-- blast edges -->
-  <line class=”crg-eb” x1=”200” y1=”100” x2=”290” y2=”60”/>
-  <line class=”crg-eb” x1=”290” y1=”60” x2=”380” y2=”100”/>
+  <line stroke=”#334155” stroke-width=”1.5” x1=”110” y1=”55” x2=”190” y2=”95”/>
+  <line stroke=”#334155” stroke-width=”1.5” x1=”110” y1=”140” x2=”190” y2=”100”/>
+  <line stroke=”#475569” stroke-width=”1.5” x1=”210” y1=”95” x2=”280” y2=”55”/>
+  <line stroke=”#334155” stroke-width=”1.5” x1=”210” y1=”105” x2=”280” y2=”145”/>
+  <line stroke=”#f97316” stroke-width=”2” stroke-dasharray=”5,3” x1=”300” y1=”55” x2=”370” y2=”95”/>
   <!-- blast box -->
-  <rect class=”crg-box” x=”265” y=”35” width=”135” height=”90” rx=”8” ry=”8”/>
-  <text class=”crg-bt” x=”332” y=”22”>Blast Radius</text>
+  <rect x=”262” y=”28” width=”120” height=”85” rx=”8” fill=”rgba(249,115,22,0.08)” stroke=”#f97316” stroke-width=”1” stroke-dasharray=”4,2”/>
+  <text x=”322” y=”18” font-size=”10” fill=”#f97316” text-anchor=”middle” font-family=”monospace”>Blast Radius</text>
+  <!-- blast edge highlight -->
+  <line stroke=”#f97316” stroke-width=”2.5” stroke-dasharray=”5,3” x1=”210” y1=”95” x2=”280” y2=”55”/>
   <!-- nodes -->
-  <circle class=”crg-n d1” cx=”120” cy=”60” r=”22”/>
-  <text class=”crg-nl d1” x=”120” y=”60”>auth.py</text>
-  <circle class=”crg-n d2” cx=”120” cy=”150” r=”22”/>
-  <text class=”crg-nl d2” x=”120” y=”150”>utils.py</text>
-  <circle class=”crg-nc crg-nc-pulse” cx=”200” cy=”100” r=”26”/>
-  <text class=”crg-nlc” x=”200” y=”100”>api.py ✏️</text>
-  <circle class=”crg-n d3” cx=”290” cy=”60” r=”22”/>
-  <text class=”crg-nl d3” x=”290” y=”60”>router.py</text>
-  <circle class=”crg-n d3” cx=”290” cy=”150” r=”22”/>
-  <text class=”crg-nl d3” x=”290” y=”150”>models.py</text>
-  <circle class=”crg-n d4” cx=”380” cy=”100” r=”22”/>
-  <text class=”crg-nl d4” x=”380” y=”100”>test_api.py</text>
+  <circle cx=”110” cy=”55” r=”22” fill=”#1e3a5f” stroke=”#38bdf8” stroke-width=”2”/>
+  <text x=”110” y=”59” font-size=”10” fill=”#93c5fd” text-anchor=”middle” font-family=”monospace”>auth.py</text>
+  <circle cx=”110” cy=”140” r=”22” fill=”#1e3a5f” stroke=”#38bdf8” stroke-width=”2”/>
+  <text x=”110” y=”144” font-size=”10” fill=”#93c5fd” text-anchor=”middle” font-family=”monospace”>utils.py</text>
+  <!-- changed node -->
+  <circle cx=”200” cy=”100” r=”28” fill=”#431407” stroke=”#f97316” stroke-width=”3”/>
+  <text x=”200” y=”96” font-size=”10” fill=”#fb923c” text-anchor=”middle” font-family=”monospace” font-weight=”bold”>api.py</text>
+  <text x=”200” y=”110” font-size=”10” fill=”#fb923c” text-anchor=”middle”>✏️</text>
+  <circle cx=”290” cy=”55” r=”22” fill=”#14432a” stroke=”#4ade80” stroke-width=”2”/>
+  <text x=”290” y=”59” font-size=”10” fill=”#86efac” text-anchor=”middle” font-family=”monospace”>router.py</text>
+  <circle cx=”290” cy=”145” r=”22” fill=”#1e3a5f” stroke=”#38bdf8” stroke-width=”2”/>
+  <text x=”290” y=”149” font-size=”10” fill=”#93c5fd” text-anchor=”middle” font-family=”monospace”>models.py</text>
+  <circle cx=”370” cy=”100” r=”22” fill=”#14432a” stroke=”#4ade80” stroke-width=”2”/>
+  <text x=”370” y=”104” font-size=”10” fill=”#86efac” text-anchor=”middle” font-family=”monospace”>test_api.py</text>
 </svg>
 <p style=”font-size:0.8rem; color:#64748b; margin-top:0.5rem;”>api.py 변경 시 영향 받는 파일만 선택 (Blast Radius)</p>
 </div>
@@ -97,32 +82,24 @@ AI는 더 많은 부분을 덜 읽고도 더 정확하게 리뷰할 수 있어.
 
 간단히 3단계야.
 
-<div style="text-align:center; margin: 2rem 0;">
-<svg width="480" height="120" viewBox="0 0 480 120" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;">
-  <style>
-    @keyframes stp-fade { from { opacity:0; } to { opacity:1; } }
-    .stp-t { font:bold 13px sans-serif; text-anchor:middle; dominant-baseline:middle; fill:white; opacity:0; animation:stp-fade .4s forwards; }
-    .stp-s { font:10px sans-serif; text-anchor:middle; dominant-baseline:middle; fill:#cbd5e1; opacity:0; animation:stp-fade .4s forwards; }
-    .stp-r { opacity:0; animation:stp-fade .4s forwards; }
-    .stp-a { stroke:#64748b; stroke-width:2; opacity:0; animation:stp-fade .3s forwards; marker-end:url(#sarr); }
-    .sd1 { animation-delay:.2s; } .sd2 { animation-delay:.7s; } .sd3 { animation-delay:.9s; } .sd4 { animation-delay:1.4s; } .sd5 { animation-delay:1.6s; }
-  </style>
+<div style="text-align:center; margin: 2rem 0; background:#0f172a; border-radius:12px; padding:1.5rem;">
+<svg width="460" height="100" viewBox="0 0 460 100" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;">
   <defs>
-    <marker id="sarr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+    <marker id="sarr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
       <path d="M0,0 L0,6 L8,3 z" fill="#64748b"/>
     </marker>
   </defs>
-  <rect class="stp-r sd1" x="10" y="30" width="120" height="60" fill="#1e40af" rx="10" ry="10"/>
-  <text class="stp-t sd1" x="70" y="53">① 파싱</text>
-  <text class="stp-s sd1" x="70" y="70">Tree-sitter AST</text>
-  <line class="stp-a sd2" x1="134" y1="60" x2="166" y2="60"/>
-  <rect class="stp-r sd3" x="170" y="30" width="140" height="60" fill="#065f46" rx="10" ry="10"/>
-  <text class="stp-t sd3" x="240" y="53">② 그래프 구성</text>
-  <text class="stp-s sd3" x="240" y="70">노드 + 엣지</text>
-  <line class="stp-a sd4" x1="314" y1="60" x2="346" y2="60"/>
-  <rect class="stp-r sd5" x="350" y="30" width="120" height="60" fill="#7c2d12" rx="10" ry="10"/>
-  <text class="stp-t sd5" x="410" y="53">③ 축소 전달</text>
-  <text class="stp-s sd5" x="410" y="70">Blast Radius만</text>
+  <rect x="10" y="20" width="120" height="60" fill="#1e40af" rx="10"/>
+  <text x="70" y="45" font-size="13" font-weight="bold" fill="white" text-anchor="middle" font-family="sans-serif">① 파싱</text>
+  <text x="70" y="62" font-size="10" fill="#cbd5e1" text-anchor="middle" font-family="sans-serif">Tree-sitter AST</text>
+  <line x1="134" y1="50" x2="162" y2="50" stroke="#64748b" stroke-width="2" marker-end="url(#sarr2)"/>
+  <rect x="166" y="20" width="140" height="60" fill="#065f46" rx="10"/>
+  <text x="236" y="45" font-size="13" font-weight="bold" fill="white" text-anchor="middle" font-family="sans-serif">② 그래프 구성</text>
+  <text x="236" y="62" font-size="10" fill="#cbd5e1" text-anchor="middle" font-family="sans-serif">노드 + 엣지</text>
+  <line x1="310" y1="50" x2="338" y2="50" stroke="#64748b" stroke-width="2" marker-end="url(#sarr2)"/>
+  <rect x="342" y="20" width="110" height="60" fill="#7c2d12" rx="10"/>
+  <text x="397" y="45" font-size="13" font-weight="bold" fill="white" text-anchor="middle" font-family="sans-serif">③ 축소 전달</text>
+  <text x="397" y="62" font-size="10" fill="#cbd5e1" text-anchor="middle" font-family="sans-serif">Blast Radius만</text>
 </svg>
 </div>
 
