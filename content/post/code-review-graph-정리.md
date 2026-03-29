@@ -28,10 +28,9 @@ Claude Code 같은 에이전트는 보통 작업 때 코드를 넓게 읽는 경
 AI에게 “지금 바뀐 코드가 어떤 파일에 영향을 미치는지”만 정확히 알려주면,
 AI는 더 많은 부분을 덜 읽고도 더 정확하게 리뷰할 수 있어.
 
-<div style=”text-align:center; margin: 2rem 0;”>
-<img src=”/agentlab-blog/images/posts/code-review-graph-diagram.jpg” alt=”코드 의존성 그래프 - Blast Radius 시각화” style=”max-width:100%; border-radius:12px; display:block; margin:0 auto;”/>
-<p style=”font-size:0.8rem; color:#64748b; margin-top:0.5rem;”>api.py 변경 시 영향 받는 파일만 선택 (Blast Radius)</p>
-</div>
+
+![code-review-graph 핵심 아이디어: Blast Radius로 영향 파일만 전달](/agentlab-blog/images/posts/code-review-graph-diagram.jpg)
+
 
 ## 설치/시작은 어떻게
 
