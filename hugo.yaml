@@ -49,6 +49,11 @@ params:
     page:
       - type: toc
 
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
 menu:
   main:
     - name: "홈"
