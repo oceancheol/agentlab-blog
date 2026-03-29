@@ -29,82 +29,48 @@ AI에게 “지금 바뀐 코드가 어떤 파일에 영향을 미치는지”�
 AI는 더 많은 부분을 덜 읽고도 더 정확하게 리뷰할 수 있어.
 
 <div style=”text-align:center; margin: 2rem 0;”>
-<svg width=”480” height=”200” viewBox=”0 0 480 200” xmlns=”http://www.w3.org/2000/svg” style=”max-width:100%;”>
+<svg width=”480” height=”210” viewBox=”0 0 480 210” xmlns=”http://www.w3.org/2000/svg” style=”max-width:100%;”>
   <style>
-    .node { fill: #1e293b; stroke: #38bdf8; stroke-width: 1.5; }
-    .node-changed { fill: #0f172a; stroke: #f97316; stroke-width: 2.5; }
-    .node-label { font: 11px monospace; fill: #94a3b8; text-anchor: middle; dominant-baseline: middle; }
-    .node-label-changed { font: 11px monospace; fill: #f97316; text-anchor: middle; dominant-baseline: middle; font-weight: bold; }
-    .edge { stroke: #334155; stroke-width: 1.2; fill: none; }
-    .edge-blast { stroke: #f97316; stroke-width: 2; fill: none; stroke-dasharray: 5,3; }
-    .highlight-box { fill: #f9731615; stroke: #f97316; stroke-width: 1; stroke-dasharray: 4,2; rx: 8; }
+    @keyframes crg-fade { from { opacity:0; } to { opacity:1; } }
+    @keyframes crg-pulse { 0%,100% { r:26; } 50% { r:30; } }
+    .crg-n  { fill:#1e293b; stroke:#38bdf8; stroke-width:1.5; opacity:0; animation:crg-fade .3s forwards; }
+    .crg-nc { fill:#0f172a; stroke:#f97316; stroke-width:2.5; opacity:0; animation:crg-fade .3s .3s forwards; }
+    .crg-nc-pulse { animation:crg-fade .3s .3s forwards, crg-pulse 1s 1.8s 2; }
+    .crg-nl  { font:11px monospace; fill:#94a3b8; text-anchor:middle; dominant-baseline:middle; opacity:0; animation:crg-fade .3s forwards; }
+    .crg-nlc { font:11px monospace; fill:#f97316; text-anchor:middle; dominant-baseline:middle; font-weight:bold; opacity:0; animation:crg-fade .3s .3s forwards; }
+    .crg-e  { stroke:#334155; stroke-width:1.2; opacity:0; animation:crg-fade .3s forwards; }
+    .crg-eb { stroke:#f97316; stroke-width:2; stroke-dasharray:5,3; opacity:0; animation:crg-fade .4s 2s forwards; }
+    .crg-box { fill:rgba(249,115,22,0.08); stroke:#f97316; stroke-width:1; stroke-dasharray:4,2; opacity:0; animation:crg-fade .4s 2.2s forwards; }
+    .crg-bt { font:10px sans-serif; fill:#f97316; text-anchor:middle; opacity:0; animation:crg-fade .4s 2.2s forwards; }
+    .d1 { animation-delay:.1s; } .d2 { animation-delay:.2s; } .d3 { animation-delay:.4s; }
+    .d4 { animation-delay:.5s; } .d5 { animation-delay:.7s; } .d6 { animation-delay:.9s; }
+    .d7 { animation-delay:1.1s; } .d8 { animation-delay:1.3s; }
   </style>
-
-  <!-- 엣지들 -->
-  <line class=”edge” x1=”120” y1=”60” x2=”200” y2=”100”>
-    <animate attributeName=”opacity” values=”0;1” dur=”0.4s” begin=”0.5s” fill=”freeze”/>
-  </line>
-  <line class=”edge” x1=”120” y1=”140” x2=”200” y2=”100”>
-    <animate attributeName=”opacity” values=”0;1” dur=”0.4s” begin=”0.7s” fill=”freeze”/>
-  </line>
-  <line class=”edge” x1=”200” y1=”100” x2=”290” y2=”60”>
-    <animate attributeName=”opacity” values=”0;1” dur=”0.4s” begin=”0.9s” fill=”freeze”/>
-  </line>
-  <line class=”edge” x1=”200” y1=”100” x2=”290” y2=”140”>
-    <animate attributeName=”opacity” values=”0;1” dur=”0.4s” begin=”1.1s” fill=”freeze”/>
-  </line>
-  <line class=”edge” x1=”290” y1=”60” x2=”380” y2=”100”>
-    <animate attributeName=”opacity” values=”0;1” dur=”0.4s” begin=”1.3s” fill=”freeze”/>
-  </line>
-
-  <!-- blast radius 강조 엣지 -->
-  <line class=”edge-blast” x1=”200” y1=”100” x2=”290” y2=”60” opacity=”0”>
-    <animate attributeName=”opacity” values=”0;1” dur=”0.5s” begin=”2.0s” fill=”freeze”/>
-  </line>
-  <line class=”edge-blast” x1=”290” y1=”60” x2=”380” y2=”100” opacity=”0”>
-    <animate attributeName=”opacity” values=”0;1” dur=”0.5s” begin=”2.2s” fill=”freeze”/>
-  </line>
-
-  <!-- blast radius 박스 -->
-  <rect class=”highlight-box” x=”270” y=”35” width=”130” height=”90” opacity=”0” rx=”8” ry=”8”>
-    <animate attributeName=”opacity” values=”0;1” dur=”0.5s” begin=”2.4s” fill=”freeze”/>
-  </rect>
-  <text x=”335” y=”20” font=”10px sans-serif” fill=”#f97316” text-anchor=”middle” opacity=”0” font-size=”10”>
-    Blast Radius
-    <animate attributeName=”opacity” values=”0;1” dur=”0.5s” begin=”2.4s” fill=”freeze”/>
-  </text>
-
-  <!-- 노드들 -->
-  <circle class=”node” cx=”120” cy=”60” r=”22” opacity=”0”>
-    <animate attributeName=”opacity” values=”0;1” dur=”0.3s” begin=”0.1s” fill=”freeze”/>
-  </circle>
-  <text class=”node-label” x=”120” y=”60” opacity=”0”>auth.py<animate attributeName=”opacity” values=”0;1” dur=”0.3s” begin=”0.1s” fill=”freeze”/></text>
-
-  <circle class=”node” cx=”120” cy=”140” r=”22” opacity=”0”>
-    <animate attributeName=”opacity” values=”0;1” dur=”0.3s” begin=”0.2s” fill=”freeze”/>
-  </circle>
-  <text class=”node-label” x=”120” y=”140” opacity=”0”>utils.py<animate attributeName=”opacity” values=”0;1” dur=”0.3s” begin=”0.2s” fill=”freeze”/></text>
-
-  <circle class=”node-changed” cx=”200” cy=”100” r=”26” opacity=”0”>
-    <animate attributeName=”opacity” values=”0;1” dur=”0.3s” begin=”0.3s” fill=”freeze”/>
-    <animate attributeName=”r” values=”26;30;26” dur=”1s” begin=”1.8s” repeatCount=”2”/>
-  </circle>
-  <text class=”node-label-changed” x=”200” y=”100” opacity=”0”>api.py ✏️<animate attributeName=”opacity” values=”0;1” dur=”0.3s” begin=”0.3s” fill=”freeze”/></text>
-
-  <circle class=”node” cx=”290” cy=”60” r=”22” opacity=”0”>
-    <animate attributeName=”opacity” values=”0;1” dur=”0.3s” begin=”0.4s” fill=”freeze”/>
-  </circle>
-  <text class=”node-label” x=”290” y=”60” opacity=”0”>router.py<animate attributeName=”opacity” values=”0;1” dur=”0.3s” begin=”0.4s” fill=”freeze”/></text>
-
-  <circle class=”node” cx=”290” cy=”140” r=”22” opacity=”0”>
-    <animate attributeName=”opacity” values=”0;1” dur=”0.3s” begin=”0.4s” fill=”freeze”/>
-  </circle>
-  <text class=”node-label” x=”290” y=”140” opacity=”0”>models.py<animate attributeName=”opacity” values=”0;1” dur=”0.3s” begin=”0.4s” fill=”freeze”/></text>
-
-  <circle class=”node” cx=”380” cy=”100” r=”22” opacity=”0”>
-    <animate attributeName=”opacity” values=”0;1” dur=”0.3s” begin=”0.5s” fill=”freeze”/>
-  </circle>
-  <text class=”node-label” x=”380” y=”100” opacity=”0”>test_api.py<animate attributeName=”opacity” values=”0;1” dur=”0.3s” begin=”0.5s” fill=”freeze”/></text>
+  <!-- edges -->
+  <line class=”crg-e d5” x1=”120” y1=”60” x2=”200” y2=”100”/>
+  <line class=”crg-e d5” x1=”120” y1=”150” x2=”200” y2=”110”/>
+  <line class=”crg-e d6” x1=”200” y1=”100” x2=”290” y2=”60”/>
+  <line class=”crg-e d7” x1=”200” y1=”100” x2=”290” y2=”150”/>
+  <line class=”crg-e d8” x1=”290” y1=”60” x2=”380” y2=”100”/>
+  <!-- blast edges -->
+  <line class=”crg-eb” x1=”200” y1=”100” x2=”290” y2=”60”/>
+  <line class=”crg-eb” x1=”290” y1=”60” x2=”380” y2=”100”/>
+  <!-- blast box -->
+  <rect class=”crg-box” x=”265” y=”35” width=”135” height=”90” rx=”8” ry=”8”/>
+  <text class=”crg-bt” x=”332” y=”22”>Blast Radius</text>
+  <!-- nodes -->
+  <circle class=”crg-n d1” cx=”120” cy=”60” r=”22”/>
+  <text class=”crg-nl d1” x=”120” y=”60”>auth.py</text>
+  <circle class=”crg-n d2” cx=”120” cy=”150” r=”22”/>
+  <text class=”crg-nl d2” x=”120” y=”150”>utils.py</text>
+  <circle class=”crg-nc crg-nc-pulse” cx=”200” cy=”100” r=”26”/>
+  <text class=”crg-nlc” x=”200” y=”100”>api.py ✏️</text>
+  <circle class=”crg-n d3” cx=”290” cy=”60” r=”22”/>
+  <text class=”crg-nl d3” x=”290” y=”60”>router.py</text>
+  <circle class=”crg-n d3” cx=”290” cy=”150” r=”22”/>
+  <text class=”crg-nl d3” x=”290” y=”150”>models.py</text>
+  <circle class=”crg-n d4” cx=”380” cy=”100” r=”22”/>
+  <text class=”crg-nl d4” x=”380” y=”100”>test_api.py</text>
 </svg>
 <p style=”font-size:0.8rem; color:#64748b; margin-top:0.5rem;”>api.py 변경 시 영향 받는 파일만 선택 (Blast Radius)</p>
 </div>
@@ -134,47 +100,29 @@ AI는 더 많은 부분을 덜 읽고도 더 정확하게 리뷰할 수 있어.
 <div style="text-align:center; margin: 2rem 0;">
 <svg width="480" height="120" viewBox="0 0 480 120" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;">
   <style>
-    .step-box { rx: 10; ry: 10; }
-    .step-text { font: bold 13px sans-serif; text-anchor: middle; dominant-baseline: middle; fill: white; }
-    .step-sub { font: 10px sans-serif; text-anchor: middle; dominant-baseline: middle; fill: #cbd5e1; }
-    .arrow { stroke: #64748b; stroke-width: 2; fill: none; marker-end: url(#arr); }
+    @keyframes stp-fade { from { opacity:0; } to { opacity:1; } }
+    .stp-t { font:bold 13px sans-serif; text-anchor:middle; dominant-baseline:middle; fill:white; opacity:0; animation:stp-fade .4s forwards; }
+    .stp-s { font:10px sans-serif; text-anchor:middle; dominant-baseline:middle; fill:#cbd5e1; opacity:0; animation:stp-fade .4s forwards; }
+    .stp-r { opacity:0; animation:stp-fade .4s forwards; }
+    .stp-a { stroke:#64748b; stroke-width:2; opacity:0; animation:stp-fade .3s forwards; marker-end:url(#sarr); }
+    .sd1 { animation-delay:.2s; } .sd2 { animation-delay:.7s; } .sd3 { animation-delay:.9s; } .sd4 { animation-delay:1.4s; } .sd5 { animation-delay:1.6s; }
   </style>
   <defs>
-    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+    <marker id="sarr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
       <path d="M0,0 L0,6 L8,3 z" fill="#64748b"/>
     </marker>
   </defs>
-
-  <!-- Step 1 -->
-  <rect class="step-box" x="10" y="30" width="120" height="60" fill="#1e40af" rx="10" ry="10" opacity="0">
-    <animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.2s" fill="freeze"/>
-  </rect>
-  <text class="step-text" x="70" y="53" opacity="0">① 파싱<animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.2s" fill="freeze"/></text>
-  <text class="step-sub" x="70" y="70" opacity="0">Tree-sitter AST<animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.2s" fill="freeze"/></text>
-
-  <!-- Arrow 1 -->
-  <line class="arrow" x1="134" y1="60" x2="166" y2="60" opacity="0">
-    <animate attributeName="opacity" values="0;1" dur="0.3s" begin="0.7s" fill="freeze"/>
-  </line>
-
-  <!-- Step 2 -->
-  <rect class="step-box" x="170" y="30" width="140" height="60" fill="#065f46" rx="10" ry="10" opacity="0">
-    <animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.9s" fill="freeze"/>
-  </rect>
-  <text class="step-text" x="240" y="53" opacity="0">② 그래프 구성<animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.9s" fill="freeze"/></text>
-  <text class="step-sub" x="240" y="70" opacity="0">노드 + 엣지<animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.9s" fill="freeze"/></text>
-
-  <!-- Arrow 2 -->
-  <line class="arrow" x1="314" y1="60" x2="346" y2="60" opacity="0">
-    <animate attributeName="opacity" values="0;1" dur="0.3s" begin="1.4s" fill="freeze"/>
-  </line>
-
-  <!-- Step 3 -->
-  <rect class="step-box" x="350" y="30" width="120" height="60" fill="#7c2d12" rx="10" ry="10" opacity="0">
-    <animate attributeName="opacity" values="0;1" dur="0.4s" begin="1.6s" fill="freeze"/>
-  </rect>
-  <text class="step-text" x="410" y="53" opacity="0">③ 축소 전달<animate attributeName="opacity" values="0;1" dur="0.4s" begin="1.6s" fill="freeze"/></text>
-  <text class="step-sub" x="410" y="70" opacity="0">Blast Radius만<animate attributeName="opacity" values="0;1" dur="0.4s" begin="1.6s" fill="freeze"/></text>
+  <rect class="stp-r sd1" x="10" y="30" width="120" height="60" fill="#1e40af" rx="10" ry="10"/>
+  <text class="stp-t sd1" x="70" y="53">① 파싱</text>
+  <text class="stp-s sd1" x="70" y="70">Tree-sitter AST</text>
+  <line class="stp-a sd2" x1="134" y1="60" x2="166" y2="60"/>
+  <rect class="stp-r sd3" x="170" y="30" width="140" height="60" fill="#065f46" rx="10" ry="10"/>
+  <text class="stp-t sd3" x="240" y="53">② 그래프 구성</text>
+  <text class="stp-s sd3" x="240" y="70">노드 + 엣지</text>
+  <line class="stp-a sd4" x1="314" y1="60" x2="346" y2="60"/>
+  <rect class="stp-r sd5" x="350" y="30" width="120" height="60" fill="#7c2d12" rx="10" ry="10"/>
+  <text class="stp-t sd5" x="410" y="53">③ 축소 전달</text>
+  <text class="stp-s sd5" x="410" y="70">Blast Radius만</text>
 </svg>
 </div>
 
@@ -199,38 +147,24 @@ AI는 더 많은 부분을 덜 읽고도 더 정확하게 리뷰할 수 있어.
 <div style="text-align:center; margin: 2rem 0;">
 <svg width="400" height="130" viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;">
   <style>
-    .bar-bg { fill: #1e293b; rx: 6; }
-    .bar-before { fill: #ef4444; }
-    .bar-after { fill: #22c55e; }
-    .bar-label { font: 12px sans-serif; fill: #94a3b8; }
-    .bar-val { font: bold 13px sans-serif; fill: white; text-anchor: middle; dominant-baseline: middle; }
-    .badge { font: bold 18px sans-serif; fill: #fbbf24; text-anchor: middle; }
+    @keyframes bar-before-grow { from { width:0; } to { width:246px; } }
+    @keyframes bar-after-grow  { from { width:0; } to { width:30px; } }
+    @keyframes bar-fade { from { opacity:0; } to { opacity:1; } }
+    .bar-lbl { font:12px sans-serif; fill:#94a3b8; }
+    .bar-val { font:bold 12px sans-serif; fill:white; text-anchor:middle; dominant-baseline:middle; opacity:0; animation:bar-fade .3s forwards; }
+    .badge-txt { font:bold 18px sans-serif; fill:#fbbf24; text-anchor:middle; opacity:0; animation:bar-fade .5s 2s forwards; }
+    .badge-sub { font:10px sans-serif; fill:#64748b; text-anchor:middle; opacity:0; animation:bar-fade .5s 2s forwards; }
+    .bv1 { animation-delay:1.1s; } .bv2 { animation-delay:1.8s; }
   </style>
-
   <text x="200" y="18" font-size="12" fill="#64748b" text-anchor="middle">토큰 사용량 비교</text>
-
-  <!-- Before bar -->
-  <text class="bar-label" x="10" y="45">Before</text>
-  <rect x="75" y="33" width="0" height="22" fill="#ef4444" rx="4" ry="4">
-    <animate attributeName="width" values="0;246" dur="0.8s" begin="0.3s" fill="freeze"/>
-  </rect>
-  <text class="bar-val" x="198" y="44" opacity="0">8.2x 토큰<animate attributeName="opacity" values="0;1" dur="0.3s" begin="1.1s" fill="freeze"/></text>
-
-  <!-- After bar -->
-  <text class="bar-label" x="10" y="90">After</text>
-  <rect x="75" y="78" width="0" height="22" fill="#22c55e" rx="4" ry="4">
-    <animate attributeName="width" values="0;30" dur="0.5s" begin="1.3s" fill="freeze"/>
-  </rect>
-  <text class="bar-val" x="92" y="89" opacity="0">1x<animate attributeName="opacity" values="0;1" dur="0.3s" begin="1.8s" fill="freeze"/></text>
-
-  <!-- Badge -->
-  <text class="badge" x="330" y="65" opacity="0">8.2x ↓
-    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="2.0s" fill="freeze"/>
-  </text>
-  <text x="330" y="82" font-size="10" fill="#64748b" text-anchor="middle" opacity="0">절약
-    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="2.0s" fill="freeze"/>
-  </text>
-
+  <text class="bar-lbl" x="10" y="48">Before</text>
+  <rect x="75" y="33" width="246" height="22" fill="#ef4444" rx="4" ry="4" style="animation:bar-before-grow .8s .3s both;"/>
+  <text class="bar-val bv1" x="198" y="44">8.2x 토큰</text>
+  <text class="bar-lbl" x="10" y="93">After</text>
+  <rect x="75" y="78" width="30" height="22" fill="#22c55e" rx="4" ry="4" style="animation:bar-after-grow .5s 1.3s both;"/>
+  <text class="bar-val bv2" x="92" y="89">1x</text>
+  <text class="badge-txt" x="330" y="65">8.2x ↓</text>
+  <text class="badge-sub" x="330" y="82">절약</text>
   <text x="200" y="120" font-size="10" fill="#475569" text-anchor="middle">평균 토큰 사용량 8.2배 감소 (공식 보고 기준)</text>
 </svg>
 </div>
