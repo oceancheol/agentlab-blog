@@ -32,6 +32,8 @@ DESIGN.md 안에는 보통 이런 항목이 들어가.
 - 에levation(그림자/깊이감) 규칙
 - 사용 규칙(Do/Don't)
 
+![DESIGN.md의 핵심 구성 요소](/images/posts/designmd-components.jpg)
+
 AI가 한 번 읽으면, 새로운 화면을 만들 때 “어떤 버튼이 어떤 색인지”, “텍스트 크기는 어떻게 설정해야 하는지”를 바로 반영할 수 있어.
 
 ## 왜 유용한가
@@ -66,6 +68,8 @@ DESIGN.md는 YAML/JSON처럼 스키마를 맞출 필요가 없어. 그냥 마크
 ## 도입 방법
 
 실제로 시작할 때는 이렇게 하면 돼.
+
+![DESIGN.md 운영 워크플로](/images/posts/designmd-workflow.jpg)
 
 1. 프로젝트 루트에 `DESIGN.md` 생성
 2. 색상, 타이포, 간격, 컴포넌트 규칙 최소 3~5개 항목으로 작성
