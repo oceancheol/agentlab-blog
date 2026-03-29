@@ -2,6 +2,7 @@
 title: "code-review-graph 정리: AI 코드리뷰를 토큰 효율적으로 만드는 방법"
 date: 2026-03-29
 draft: false
+image: "images/posts/code-review-graph.jpg"
 tags: ["code-review-graph", "Claude Code", "MCP", "코드리뷰", "AI 코딩도구"]
 description: "Claude Code가 전체 코드베이스를 매번 읽는 문제를 줄이기 위해, 코드 구조를 그래프로 관리하는 code-review-graph를 초보자 관점으로 정리했다."
 ---
