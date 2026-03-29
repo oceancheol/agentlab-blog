@@ -29,33 +29,39 @@ AI에게 “지금 바뀐 코드가 어떤 파일에 영향을 미치는지”�
 AI는 더 많은 부분을 덜 읽고도 더 정확하게 리뷰할 수 있어.
 
 <div style=”text-align:center; margin: 2rem 0; background:#0f172a; border-radius:12px; padding:1.5rem;”>
-<svg width=”460” height=”190” viewBox=”0 0 460 190” xmlns=”http://www.w3.org/2000/svg” style=”max-width:100%;”>
+<svg width=”460” height=”200” viewBox=”0 0 460 200” xmlns=”http://www.w3.org/2000/svg” style=”max-width:100%;”>
   <!-- edges -->
-  <line stroke=”#334155” stroke-width=”1.5” x1=”110” y1=”55” x2=”190” y2=”95”/>
-  <line stroke=”#334155” stroke-width=”1.5” x1=”110” y1=”140” x2=”190” y2=”100”/>
-  <line stroke=”#475569” stroke-width=”1.5” x1=”210” y1=”95” x2=”280” y2=”55”/>
-  <line stroke=”#334155” stroke-width=”1.5” x1=”210” y1=”105” x2=”280” y2=”145”/>
-  <line stroke=”#f97316” stroke-width=”2” stroke-dasharray=”5,3” x1=”300” y1=”55” x2=”370” y2=”95”/>
-  <!-- blast box -->
-  <rect x=”262” y=”28” width=”120” height=”85” rx=”8” fill=”rgba(249,115,22,0.08)” stroke=”#f97316” stroke-width=”1” stroke-dasharray=”4,2”/>
-  <text x=”322” y=”18” font-size=”10” fill=”#f97316” text-anchor=”middle” font-family=”monospace”>Blast Radius</text>
+  <line stroke=”#64748b” stroke-width=”1.5” x1=”110” y1=”60” x2=”175” y2=”95”/>
+  <line stroke=”#64748b” stroke-width=”1.5” x1=”110” y1=”145” x2=”175” y2=”110”/>
+  <line stroke=”#64748b” stroke-width=”1.5” x1=”228” y1=”90” x2=”268” y2=”60”/>
+  <line stroke=”#64748b” stroke-width=”1.5” x1=”228” y1=”112” x2=”268” y2=”148”/>
+  <line stroke=”#f97316” stroke-width=”2” stroke-dasharray=”5,3” x1=”312” y1=”58” x2=”355” y2=”95”/>
+  <!-- blast radius box -->
+  <rect x=”258” y=”30” width=”130” height=”100” rx=”8” fill=”rgba(249,115,22,0.12)” stroke=”#f97316” stroke-width=”1.5” stroke-dasharray=”4,2”/>
+  <text x=”323” y=”22” font-size=”10” fill=”#fb923c” text-anchor=”middle” font-family=”monospace”>Blast Radius</text>
   <!-- blast edge highlight -->
-  <line stroke=”#f97316” stroke-width=”2.5” stroke-dasharray=”5,3” x1=”210” y1=”95” x2=”280” y2=”55”/>
-  <!-- nodes -->
-  <circle cx=”110” cy=”55” r=”22” fill=”#1e3a5f” stroke=”#38bdf8” stroke-width=”2”/>
-  <text x=”110” y=”59” font-size=”10” fill=”#93c5fd” text-anchor=”middle” font-family=”monospace”>auth.py</text>
-  <circle cx=”110” cy=”140” r=”22” fill=”#1e3a5f” stroke=”#38bdf8” stroke-width=”2”/>
-  <text x=”110” y=”144” font-size=”10” fill=”#93c5fd” text-anchor=”middle” font-family=”monospace”>utils.py</text>
-  <!-- changed node -->
-  <circle cx=”200” cy=”100” r=”28” fill=”#431407” stroke=”#f97316” stroke-width=”3”/>
-  <text x=”200” y=”96” font-size=”10” fill=”#fb923c” text-anchor=”middle” font-family=”monospace” font-weight=”bold”>api.py</text>
-  <text x=”200” y=”110” font-size=”10” fill=”#fb923c” text-anchor=”middle”>✏️</text>
-  <circle cx=”290” cy=”55” r=”22” fill=”#14432a” stroke=”#4ade80” stroke-width=”2”/>
-  <text x=”290” y=”59” font-size=”10” fill=”#86efac” text-anchor=”middle” font-family=”monospace”>router.py</text>
-  <circle cx=”290” cy=”145” r=”22” fill=”#1e3a5f” stroke=”#38bdf8” stroke-width=”2”/>
-  <text x=”290” y=”149” font-size=”10” fill=”#93c5fd” text-anchor=”middle” font-family=”monospace”>models.py</text>
-  <circle cx=”370” cy=”100” r=”22” fill=”#14432a” stroke=”#4ade80” stroke-width=”2”/>
-  <text x=”370” y=”104” font-size=”10” fill=”#86efac” text-anchor=”middle” font-family=”monospace”>test_api.py</text>
+  <line stroke=”#f97316” stroke-width=”2” stroke-dasharray=”5,3” x1=”228” y1=”95” x2=”268” y2=”60”/>
+  <!-- normal nodes -->
+  <circle cx=”110” cy=”55” r=”26” fill=”#1e40af” stroke=”#60a5fa” stroke-width=”2”/>
+  <text x=”110” y=”52” font-size=”9” fill=”#bfdbfe” text-anchor=”middle” font-family=”monospace”>auth.py</text>
+  <text x=”110” y=”64” font-size=”9” fill=”#93c5fd” text-anchor=”middle” font-family=”monospace”>import</text>
+  <circle cx=”110” cy=”148” r=”26” fill=”#1e40af” stroke=”#60a5fa” stroke-width=”2”/>
+  <text x=”110” y=”145” font-size=”9” fill=”#bfdbfe” text-anchor=”middle” font-family=”monospace”>utils.py</text>
+  <text x=”110” y=”157” font-size=”9” fill=”#93c5fd” text-anchor=”middle” font-family=”monospace”>helper</text>
+  <!-- changed node (center) -->
+  <circle cx=”200” cy=”100” r=”32” fill=”#9a3412” stroke=”#f97316” stroke-width=”3”/>
+  <text x=”200” y=”96” font-size=”11” fill=”#fed7aa” text-anchor=”middle” font-family=”monospace” font-weight=”bold”>api.py</text>
+  <text x=”200” y=”110” font-size=”10” fill=”#fb923c” text-anchor=”middle” font-family=”sans-serif”>changed</text>
+  <!-- blast radius nodes -->
+  <circle cx=”290” cy=”55” r=”26” fill=”#15803d” stroke=”#4ade80” stroke-width=”2”/>
+  <text x=”290” y=”52” font-size=”9” fill=”#bbf7d0” text-anchor=”middle” font-family=”monospace”>router.py</text>
+  <text x=”290” y=”64” font-size=”9” fill=”#86efac” text-anchor=”middle” font-family=”monospace”>route</text>
+  <circle cx=”290” cy=”148” r=”26” fill=”#1e40af” stroke=”#60a5fa” stroke-width=”2”/>
+  <text x=”290” y=”145” font-size=”9” fill=”#bfdbfe” text-anchor=”middle” font-family=”monospace”>models.py</text>
+  <text x=”290” y=”157” font-size=”9” fill=”#93c5fd” text-anchor=”middle” font-family=”monospace”>schema</text>
+  <circle cx=”378” cy=”100” r=”26” fill=”#15803d” stroke=”#4ade80” stroke-width=”2”/>
+  <text x=”378” y=”97” font-size=”9” fill=”#bbf7d0” text-anchor=”middle” font-family=”monospace”>test_api</text>
+  <text x=”378” y=”109” font-size=”9” fill=”#86efac” text-anchor=”middle” font-family=”monospace”>.py</text>
 </svg>
 <p style=”font-size:0.8rem; color:#64748b; margin-top:0.5rem;”>api.py 변경 시 영향 받는 파일만 선택 (Blast Radius)</p>
 </div>
