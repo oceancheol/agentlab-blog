@@ -1,8 +1,8 @@
 ---
 title: "Claude Code용 Codex 플러그인 정리: 코드 리뷰와 작업 위임을 한 번에"
-date: 2026-03-31
+date: 2026-04-01
 draft: false
-image: "images/posts/claude-code-codex-plugin.jpg"
+image: "images/posts/claude-code-codex-plugin-site.jpg"
 tags: ["Claude Code", "Codex", "코드 리뷰", "MCP", "개발 도구"]
 description: "OpenAI Codex 플러그인이 Claude Code에서 코드 리뷰/작업 위임을 어떻게 동작시키는지, 언제 쓰면 좋은지 초보자도 바로 쓸 수 있게 정리했다."
 ---
@@ -17,7 +17,10 @@ description: "OpenAI Codex 플러그인이 Claude Code에서 코드 리뷰/작�
 
 단, 기본 동작은 로컬 환경의 Codex CLI를 그대로 사용한다는 점이 핵심이야.
 
-![Codex 플러그인 핵심 흐름](/images/posts/claude-code-codex-flow.jpg)
+![깃허브 페이지에서 바로 보이는 공식 썸네일](/images/posts/claude-code-codex-plugin-site.jpg)
+
+이 공식 썸네일은 GitHub 페이지에서 OG로 노출되는 원본 이미지야.
+
 
 ## 어떤 기능이 있나
 
