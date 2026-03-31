@@ -2,7 +2,7 @@
 title: "Meta-Harness 정리: 모델 하네스를 직접 진화시키는 방식"
 date: 2026-04-01T07:35:00+09:00
 draft: false
-image: "images/posts/meta-harness.jpg"
+image: "images/posts/meta-harness-site.svg"
 tags: ["Meta-Harness", "LLM", "모델 하네스", "AI 최적화", "에이전트"]
 description: "Meta-Harness가 왜 기존 탐색법과 다른지, 전체 로그를 활용해 하네스를 진화시키는 방식과 실험 성능을 초보자도 이해할 수 있게 정리했다."
 ---
@@ -13,6 +13,8 @@ description: "Meta-Harness가 왜 기존 탐색법과 다른지, 전체 로그�
 `Meta-Harness`는 **전체 후보 코드, 실행 로그, 점수까지 파일시스템에 남기고** 그걸 다음 후보 생성에 그대로 써.
 
 한마디로, “요약한 점수만 보고 추측”이 아니라 “실패한 이유를 직접 읽고 고치기”가 가능해져.
+
+![Meta-Harness 공식 썸네일](/images/posts/meta-harness-site.svg)
 
 ![Meta-Harness 핵심 구조](/images/posts/meta-harness-loop.jpg)
 
