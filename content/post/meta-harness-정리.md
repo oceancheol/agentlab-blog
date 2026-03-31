@@ -16,7 +16,6 @@ description: "Meta-Harness가 왜 기존 탐색법과 다른지, 전체 로그�
 
 ![Meta-Harness 공식 썸네일](/images/posts/meta-harness-site.svg)
 
-![Meta-Harness 핵심 구조](/images/posts/meta-harness-loop.jpg)
 
 ## 핵심 아이디어 한 줄
 
@@ -52,6 +51,8 @@ description: "Meta-Harness가 왜 기존 탐색법과 다른지, 전체 로그�
 이걸 반복해서 후보가 점점 좋아지는 방식이야.
 
 ### 실험 결과 요약
+
+![텍스트 분류 및 학습곡선 비교](/images/posts/meta-harness-learning-curves.svg)
 
 #### 텍스트 분류
 
