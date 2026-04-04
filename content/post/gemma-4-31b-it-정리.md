@@ -1,6 +1,6 @@
 ---
 title: "google/gemma-4-31B-it 정리: 31B 멀티모달 오픈 모델의 실제 사용 포인트"
-date: 2026-04-04T13:40:00+09:00
+date: 2026-04-04T13:00:00+09:00
 draft: false
 image: "images/posts/gemma-4-31B-it-site.png"
 tags: ["Hugging Face", "Gemma 4", "Gemma-4-31B-it", "멀티모달 LLM", "추론 모델"]
