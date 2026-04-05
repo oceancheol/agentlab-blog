@@ -4,8 +4,8 @@ date: 2026-04-05T20:21:04+09:00
 draft: false
 tags: ["AI", "에이전트", "자동화", "Hermes", "OpenClaw"]
 description: "NousResearch의 Hermes Agent를 핵심 기능과 활용 포인트 중심으로 정리한 블로그 글이다."
----
 image: images/posts/hermes-agent-정리.jpg
+---
 
 > 이 글은 [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) 저장소를 바탕으로 정리했다.
 
